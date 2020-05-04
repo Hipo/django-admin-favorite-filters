@@ -1,0 +1,1 @@
+# django-admin-favorite-filters

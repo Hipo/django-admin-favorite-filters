@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "django-admin-favorite-filters"
+version = "0.1.0"
+description = ""
+authors = ["Yigit Guler <yigit@hipo.biz>"]
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+Django = { version = ">=2.1"}
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.6"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
