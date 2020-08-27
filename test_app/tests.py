@@ -35,7 +35,7 @@ class FavoriteFilterTests(TestCase):
         model = ContentType.objects.get_for_model(User)
 
         favorite_filter = FavoriteFilter(
-            name="Cake Filter", filtered_model=model, query_parameters='username__icontains="Al"')
+            name="Staff Filter", filtered_model=model, query_parameters='is_staff=True')
 
         self.admin.save_model(obj=favorite_filter,
                               request=self.user, form=None, change=None)
@@ -54,12 +54,12 @@ class FavoriteFilterTests(TestCase):
         response = self.client.post(path)
         self.assertEqual(response.status_code, 200)
 
-    def test_add_favorite(self):
+    def test_add_favorite_filter(self):
         add_favorite_url = reverse('admin:%s_%s_add' % (
             FavoriteFilter._meta.app_label, FavoriteFilter._meta.model_name))
 
         filtered_model = ContentType.objects.get_for_model(User)
-        add_favorite_url = f"{add_favorite_url}?filtered_model={filtered_model.id}&query_parameters='username__icontains='Ben''"
+        add_favorite_url = f"{add_favorite_url}?filtered_model={filtered_model.id}&query_parameters='is_active=True'"
 
         response = self.client.post(add_favorite_url)
         self.assertEqual(response.status_code, 200)
