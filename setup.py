@@ -19,7 +19,7 @@ setup_kwargs = {
     'author_email': 'yigit@hipo.biz',
     'maintainer': None,
     'maintainer_email': None,
-    'url': None,
+    'url': 'https://github.com/Hipo/django-admin-favorite-filters',
     'packages': packages,
     'package_data': package_data,
     'install_requires': install_requires,
